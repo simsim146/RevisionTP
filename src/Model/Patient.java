@@ -12,7 +12,7 @@ public class Patient {
         n = nomComplet;
         a = age;
         d = diabetique;
-        id = idCounter++;
+        id = ++idCounter;
     }
 
     Patient(){
@@ -22,8 +22,15 @@ public class Patient {
         id = 0;
     }
 
+    Patient(Patient p){
+        nomComplet = new String(p.nomComplet);
+        age = p.age;
+        diabetique = p.diabetique;
+        id = p.idCounter;
+    }
+
     public String toStrning(){
-        if (diabetique == true){
+        if (diabetique){
             return "Patient #"+id+" : Le nom "+nomComplet+" , agee "+age+" ans, le patient est diabetique.";
         }else {
             return "Patient #"+id+" : Le nom "+nomComplet+" , agee "+age+" ans, le patient n'est pas diabetique.";

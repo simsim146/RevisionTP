@@ -21,6 +21,16 @@ public abstract class Medecin {
         grade = "";
     }
 
+    public Medecin(Medecin m){
+        INPE = new String(m.INPE);
+        nomComplet = new String(m.nomComplet);
+        service = new String(m.service);
+        grade = new String(m.grade);
+    }
+
+    public String toString(){
+        return "Le medecin "+nomComplet+", avec INPE de: "+INPE+" service: "+service+", grade: "+grade;
+    }
 
 
 }
